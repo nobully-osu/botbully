@@ -1,5 +1,6 @@
 #requried imports
 from twitchio.ext import commands
+from twitchio import Timeout
 
 #external scripts to keep main script clean
 import super_secret
@@ -20,7 +21,7 @@ class Bot(commands.Bot):
         #ignore messages sent by self
         if message.echo:
             return
-
+    
         #override event_message ignore to allow others to interact
         await self.handle_commands(message)
 
@@ -32,6 +33,14 @@ class Bot(commands.Bot):
         #now playing command for osu
         await ctx.send(f'{nowPlayingLogic.getSongInfo() + " | " + nowPlayingLogic.getSongLink()}')
 
+    @commands.command()
+    async def nppp(self, ctx: commands.Context):
+        #pp for current map\
+        await ctx.send(f'{nowPlayingLogic.getSongPP()}')
+
+    #@commands.command()
+    #async def hd(self, ctx: commands.Context):
+    #    await Timeout(ctx.message.author, 60)
+
 bot = Bot()
 bot.run()
-# bot.run() is blocking and will stop execution of any below code here until stopped or closed.
