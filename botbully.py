@@ -30,7 +30,7 @@ class Bot(commands.Bot):
     @commands.command()
     async def np(self, ctx: commands.Context):
         #now playing command for osu
-        await ctx.send(f'{nowPlayingLogic.getCurrentSong()}')
+        await ctx.send(f'{nowPlayingLogic.getSongInfo() + " | " + nowPlayingLogic.getSongLink()}')
 
 bot = Bot()
 bot.run()

@@ -1,9 +1,16 @@
 import super_secret
 
-txtFile = super_secret.txtFilePath
+mapLink = super_secret.txtFilePath + 'np_playing_DL.txt'
+mapInfo = super_secret.txtFilePath + 'np_all.txt'
 
-def getCurrentSong():
-    f = open(txtFile)
+def getSongLink():
+    f = open(mapLink)
     link = f.read()
     f.close()
     return link
+
+def getSongInfo():
+    g = open(mapInfo)
+    info = g.read()
+    g.close()
+    return info
