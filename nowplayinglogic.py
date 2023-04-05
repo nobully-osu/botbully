@@ -3,6 +3,7 @@ import super_secret
 mapLink = super_secret.txtFilePath + 'np_playing_DL.txt'
 mapInfo = super_secret.txtFilePath + 'np_all.txt'
 mapPP = super_secret.txtFilePath + 'np_pp.txt'
+allInfo = super_secret.txtFilePath + 'np_link_pp.txt'
 
 def getSongLink():
     f = open(mapLink)
@@ -21,3 +22,9 @@ def getSongPP():
     pp = h.read()
     h.close()
     return pp
+
+def getAllSongInfo():
+    j = open(allInfo)
+    all = j.read()
+    j.close()
+    return all

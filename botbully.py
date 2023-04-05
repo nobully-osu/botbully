@@ -1,6 +1,5 @@
 #requried imports
 from twitchio.ext import commands
-from twitchio import Timeout
 
 #external scripts to keep main script clean
 import super_secret
@@ -31,12 +30,13 @@ class Bot(commands.Bot):
     @commands.command()
     async def np(self, ctx: commands.Context):
         #now playing command for osu
-        await ctx.send(f'{nowPlayingLogic.getSongInfo() + " | " + nowPlayingLogic.getSongLink()}')
+        #await ctx.send(f'{nowPlayingLogic.getSongInfo() + " | " + nowPlayingLogic.getSongLink()}')
+        await ctx.send(f'{nowPlayingLogic.getAllSongInfo()}')
 
-    @commands.command()
-    async def nppp(self, ctx: commands.Context):
-        #pp for current map\
-        await ctx.send(f'{nowPlayingLogic.getSongPP()}')
+    #@commands.command()
+    #async def nppp(self, ctx: commands.Context):
+    #    #pp for current map
+    #    await ctx.send(f'{nowPlayingLogic.getSongPP()}')
 
     #@commands.command()
     #async def hd(self, ctx: commands.Context):
