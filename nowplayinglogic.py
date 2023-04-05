@@ -1,9 +1,9 @@
-import os
+import super_secret
 
-textfile = "C:\\Users\\Matthew\\Desktop\\Games\\osuStreamCompanion\\Files\\np_playing_DL.txt"
+txtFile = super_secret.txtFilePath
 
 def getCurrentSong():
-    f = open(textfile)
+    f = open(txtFile)
     link = f.read()
     f.close()
     return link

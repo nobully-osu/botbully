@@ -1,12 +1,14 @@
+#requried imports
 from twitchio.ext import commands
 
+#external scripts to keep main script clean
 import super_secret
-import nowplayinglogic
+import nowPlayingLogic
 
 class Bot(commands.Bot):
 
     def __init__(self):
-        #init with api key, prefix, and channels to join
+        #init values from .py script to keep api key private
         super().__init__(token=super_secret.API_KEY, prefix=super_secret.BOT_PREFIX, initial_channels=[super_secret.CHANNEL])
 
     async def event_ready(self):
@@ -28,7 +30,7 @@ class Bot(commands.Bot):
     @commands.command()
     async def np(self, ctx: commands.Context):
         #now playing command for osu
-        await ctx.send(f'{nowplayinglogic.getCurrentSong()}')
+        await ctx.send(f'{nowPlayingLogic.getCurrentSong()}')
 
 bot = Bot()
 bot.run()
