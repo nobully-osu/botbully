@@ -29,18 +29,8 @@ class Bot(commands.Bot):
 
     @commands.command()
     async def np(self, ctx: commands.Context):
-        #now playing command for osu
-        #await ctx.send(f'{nowPlayingLogic.getSongInfo() + " | " + nowPlayingLogic.getSongLink()}')
+1        #now playing command for osu
         await ctx.send(f'{nowPlayingLogic.getAllSongInfo()}')
-
-    #@commands.command()
-    #async def nppp(self, ctx: commands.Context):
-    #    #pp for current map
-    #    await ctx.send(f'{nowPlayingLogic.getSongPP()}')
-
-    #@commands.command()
-    #async def hd(self, ctx: commands.Context):
-    #    await Timeout(ctx.message.author, 60)
 
 bot = Bot()
 bot.run()
